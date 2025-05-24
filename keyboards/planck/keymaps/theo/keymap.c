@@ -18,6 +18,10 @@ enum planck_layers {
 #define COLEMAK PDF(_COLEMAK_DH)
 
 #define SFT_GRV MT(MOD_LSFT, KC_GRAVE)
+#define WIN_LFT LCAG(KC_LEFT)
+#define WIN_MAX LCAG(KC_M)
+#define WIN_CEN LCAG(KC_C)
+#define WIN_RGT LCAG(KC_RIGHT)
 
 enum {
     TD_A,
@@ -88,10 +92,10 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * `-----------------------------------------------------------------------------------'
  */
 [_LOWER] = LAYOUT_planck_grid(
-    _______, _______, _______, _______, _______, _______, _______, ADJUST,     LCAG(KC_LEFT), LCAG(KC_M), LCAG(KC_C), LCAG(KC_RIGHT)
     KC_GRV,  KC_EXLM, KC_AT,   KC_HASH, KC_DLR,  KC_PERC, KC_CIRC, KC_AMPR, KC_ASTR, KC_LPRN, KC_RPRN, KC_DEL,
     KC_DEL,  _______, _______, _______, _______, _______, _______, KC_UNDS, KC_PLUS, KC_LCBR, KC_RCBR, KC_PIPE,
     _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______,
+    _______, _______, _______, _______, _______, _______, _______, ADJUST,  WIN_LFT, WIN_MAX, WIN_CEN, WIN_RGT
 ),
 
 /* Raise
