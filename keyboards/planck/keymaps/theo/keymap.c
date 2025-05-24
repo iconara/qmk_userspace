@@ -76,7 +76,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 [_COLEMAK_DH] = LAYOUT_planck_grid(
     KC_TAB,  KC_Q,    KC_W,    TD(TD_F),KC_P,    KC_B,    KC_J,    KC_L,    KC_U,    KC_Y,    KC_SCLN, KC_BSPC,
     KC_ESC,  TD(TD_A),KC_R,    KC_S,    KC_T,    TD(TD_G),KC_M,    KC_N,    KC_E,    KC_I,    KC_O,    KC_QUOT,
-    SFT_GRV, TD(TD_Z),KC_X,    TD(TD_C),KC_D,    TD(TD_V),KC_K,    KC_H,    KC_COMM, KC_DOT,  KC_SLSH, KC_ENT ,
+    SFT_GRV, TD(TD_Z),KC_X,    TD(TD_C),KC_D,    TD(TD_V),KC_K,    KC_H,    KC_COMM, KC_DOT,  KC_SLSH, KC_ENT,
     NUMPAD,  KC_LCTL, KC_LALT, KC_LGUI, LOWER,   KC_SPC,  KC_SPC,  RAISE,   KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT
 ),
 
