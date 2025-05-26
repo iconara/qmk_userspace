@@ -2,6 +2,7 @@
     "userspace_version": "1.1",
     "build_targets": [
         ["planck/rev4", "theo"],
-        ["planck/rev4", "via"]
+        ["planck/rev4", "via"],
+        ["preonic/rev3_drop", "theo"]
     ]
 }
