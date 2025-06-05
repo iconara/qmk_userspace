@@ -24,25 +24,6 @@ enum planck_layers {
 #define WIN_CEN LCAG(KC_C)
 #define WIN_RGT LCAG(KC_RIGHT)
 
-enum {
-    TD_A,
-    TD_C,
-    TD_F,
-    TD_G,
-    TD_V,
-    TD_Z
-};
-
-tap_dance_action_t tap_dance_actions[] = {
-  [TD_A] = ACTION_TAP_DANCE_DOUBLE(KC_A, LGUI(KC_A)),
-  [TD_C] = ACTION_TAP_DANCE_DOUBLE(KC_C, LGUI(KC_C)),
-  [TD_F] = ACTION_TAP_DANCE_DOUBLE(KC_F, LGUI(KC_F)),
-  [TD_G] = ACTION_TAP_DANCE_DOUBLE(KC_G, LGUI(KC_G)),
-  [TD_V] = ACTION_TAP_DANCE_DOUBLE(KC_V, LGUI(KC_V)),
-  [TD_Z] = ACTION_TAP_DANCE_DOUBLE(KC_Z, LGUI(KC_Z))
-};
-
-
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 /* Qwerty
@@ -77,9 +58,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  *  +--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+
  */
 [_COLEMAK_DH] = LAYOUT_planck_grid(
-    KC_TAB,  KC_Q,    KC_W,    TD(TD_F),KC_P,    KC_B,    KC_J,    KC_L,    KC_U,    KC_Y,    KC_SCLN, KC_BSPC,
-    KC_ESC,  TD(TD_A),KC_R,    KC_S,    KC_T,    TD(TD_G),KC_M,    KC_N,    KC_E,    KC_I,    KC_O,    KC_QUOT,
-    SFT_GRV, TD(TD_Z),KC_X,    TD(TD_C),KC_D,    TD(TD_V),KC_K,    KC_H,    KC_COMM, KC_DOT,  KC_SLSH, KC_ENT,
+    KC_TAB,  KC_Q,    KC_W,    KC_F,    KC_P,    KC_B,    KC_J,    KC_L,    KC_U,    KC_Y,    KC_SCLN, KC_BSPC,
+    KC_ESC,  KC_A,    KC_R,    KC_S,    KC_T,    KC_G,    KC_M,    KC_N,    KC_E,    KC_I,    KC_O,    KC_QUOT,
+    SFT_GRV, KC_Z,    KC_X,    KC_C,    KC_D,    KC_V,    KC_K,    KC_H,    KC_COMM, KC_DOT,  KC_SLSH, KC_ENT,
     NUMPAD,  KC_LCTL, KC_LALT, KC_LGUI, LOWER,   KC_SPC,  KC_SPC,  RAISE_D, KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT
 ),
 

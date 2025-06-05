@@ -27,24 +27,6 @@ enum preonic_layers {
 #define WIN_CEN LCAG(KC_C)
 #define WIN_RGT LCAG(KC_RIGHT)
 
-enum {
-    TD_A,
-    TD_C,
-    TD_F,
-    TD_G,
-    TD_V,
-    TD_Z
-};
-
-tap_dance_action_t tap_dance_actions[] = {
-  [TD_A] = ACTION_TAP_DANCE_DOUBLE(KC_A, LGUI(KC_A)),
-  [TD_C] = ACTION_TAP_DANCE_DOUBLE(KC_C, LGUI(KC_C)),
-  [TD_F] = ACTION_TAP_DANCE_DOUBLE(KC_F, LGUI(KC_F)),
-  [TD_G] = ACTION_TAP_DANCE_DOUBLE(KC_G, LGUI(KC_G)),
-  [TD_V] = ACTION_TAP_DANCE_DOUBLE(KC_V, LGUI(KC_V)),
-  [TD_Z] = ACTION_TAP_DANCE_DOUBLE(KC_Z, LGUI(KC_Z))
-};
-
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     [_QWERTY] = LAYOUT_ortho_5x12(
         KC_GRV,  KC_1,    KC_2,    KC_3,    KC_4,    KC_5,    KC_6,    KC_7,    KC_8,    KC_9,    KC_0,    KC_BSPC,
@@ -54,9 +36,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         NUMPAD,  KC_LCTL, KC_LALT, KC_LGUI, LOWER,   KC_SPC,  KC_SPC,  RAISE,   KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT),
     [_COLEMAK_DH] = LAYOUT_ortho_5x12(
         KC_GRV,  KC_1,    KC_2,    KC_3,    KC_4,    KC_5,    KC_6,    KC_7,    KC_8,    KC_9,    KC_0,    KC_BSPC,
-        KC_TAB,  KC_Q,    KC_W,    TD(TD_F),KC_P,    KC_B,    KC_J,    KC_L,    KC_U,    KC_Y,    KC_SCLN, KC_BSPC,
-        KC_ESC,  TD(TD_A),KC_R,    KC_S,    KC_T,    TD(TD_G),KC_M,    KC_N,    KC_E,    KC_I,    KC_O,    KC_QUOT,
-        SFT_GRV, TD(TD_Z),KC_X,    TD(TD_C),KC_D,    TD(TD_V),KC_K,    KC_H,    KC_COMM, KC_DOT,  KC_SLSH, KC_ENT,
+        KC_TAB,  KC_Q,    KC_W,    KC_F,    KC_P,    KC_B,    KC_J,    KC_L,    KC_U,    KC_Y,    KC_SCLN, KC_BSPC,
+        KC_ESC,  KC_A,    KC_R,    KC_S,    KC_T,    KC_G,    KC_M,    KC_N,    KC_E,    KC_I,    KC_O,    KC_QUOT,
+        SFT_GRV, KC_Z,    KC_X,    KC_C,    KC_D,    KC_V,    KC_K,    KC_H,    KC_COMM, KC_DOT,  KC_SLSH, KC_ENT,
         NUMPAD,  KC_LCTL, KC_LALT, KC_LGUI, LOWER,   KC_SPC,  KC_SPC,  RAISE_D, KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT),
     [_LOWER] = LAYOUT_ortho_5x12(
         KC_TILD, KC_EXLM, KC_AT,   KC_HASH, KC_DLR,  KC_PERC, KC_CIRC, KC_AMPR, KC_ASTR, KC_LPRN, KC_RPRN, KC_BSPC,
