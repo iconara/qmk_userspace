@@ -4,6 +4,7 @@ enum planck_layers {
   _QWERTY,
   _COLEMAK_DH,
   _COLEMAK_STD,
+  _COLEMAK_THEO,
   _LOWER,
   _RAISE,
   _NUMPAD,
@@ -18,6 +19,7 @@ enum planck_layers {
 #define QWERTY PDF(_QWERTY)
 #define CLMKDH PDF(_COLEMAK_DH)
 #define CLMKSTD PDF(_COLEMAK_STD)
+#define CLMKTH PDF(_COLEMAK_THEO)
 
 #define RAISE_D LT(_RAISE, KC_BSPC)
 #define SFT_GRV MT(MOD_LSFT, KC_GRAVE)
@@ -85,6 +87,25 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     NUMPAD,  KC_LCTL, KC_LALT, KC_LGUI, LOWER,   KC_SPC,  KC_SPC,  RAISE_D, KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT
 ),
 
+/* Colemak, Theo's version
+ *
+ *  +--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+
+ *  | Tab    |   Q    |   W    |   F    |   P    |   G    |   J    |   L    |   U    |   Y    |   ;    | Bksp   |
+ *  +--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+
+ *  | Esc    |   A    |   S    |   R    |   T    |   D    |   H    |   N    |   E    |   I    |   O    |  '     |
+ *  +--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+
+ *  | Shft/` |   Z    |   X    |   C    |   D    |   B    |   K    |   M    |   ,    |   .    |   /    |Enter   |
+ *  +--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+
+ *  | Numpad | Ctrl   | Alt    | GUI    |Lower   |      Space      |Raise   | Left   | Down   | Up     |Right   |
+ *  +--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+
+ */
+[_COLEMAK_THEO] = LAYOUT_planck_grid(
+    KC_TAB,  KC_Q,    KC_W,    KC_F,    KC_P,    KC_G,    KC_J,    KC_L,    KC_U,    KC_Y,    KC_SCLN, KC_BSPC,
+    KC_ESC,  KC_A,    KC_S,    KC_R,    KC_T,    KC_D,    KC_H,    KC_N,    KC_E,    KC_I,    KC_O,    KC_QUOT,
+    SFT_GRV, KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,    KC_K,    KC_M,    KC_COMM, KC_DOT,  KC_SLSH, KC_ENT,
+    NUMPAD,  KC_LCTL, KC_LALT, KC_LGUI, LOWER,   KC_SPC,  KC_SPC,  RAISE_D, KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT
+),
+
 /* Lower
  *
  *  +--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+
@@ -147,7 +168,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  *  +--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+
  *  |        | Reset  |Debug   |EE_CLR  |        |        |        |        |        |        |        | Del    |
  *  +--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+
- *  |        |        |        |        |        |        |        |Qwerty  |Clmk DH |Clmk std|        |        |
+ *  |        |        |        |        |        |        |        |Qwerty  |Clmk DH |Clmk std|Clmk TH |        |
  *  +--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+
  *  |        |Musc on |Musc off|Musc nxt|        |        |        |        |        |        |        |        |
  *  +--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+
@@ -157,7 +178,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 [_ADJUST] = LAYOUT_planck_grid(
     _______, QK_BOOT, DB_TOGG, EE_CLR,  _______, _______, _______, _______, _______, _______, _______, KC_DEL,
-    _______, _______, _______, _______, _______, _______, _______, QWERTY,  CLMKDH,  CLMKSTD, _______, _______,
+    _______, _______, _______, _______, _______, _______, _______, QWERTY,  CLMKDH,  CLMKSTD, CLMKTH,  _______,
     _______, MU_ON,   MU_OFF,  MU_NEXT, _______, _______, _______, _______, _______, _______, _______, _______,
     _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______
 )
